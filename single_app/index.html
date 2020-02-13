@@ -9,6 +9,7 @@
   <link href="https://fonts.googleapis.com/css?family=Odibee+Sans&display=swap" rel="stylesheet">
   <title>MENÚ</title>
   <script src="js/splash.js"></script>
+  <script src="js/script.js"></script>
 </head>
 
 <body>
@@ -16,7 +17,9 @@
     <div id="carga"></div>
   </div>
   <div id="phone">
-    <div id="img"> <p style="color:white">IMAGEN</p> </div> 
+    <div id="img">
+      <p style="color:white">IMAGEN</p>
+    </div>
     <table id="menu">
       <tr>
         <th></th>
@@ -24,18 +27,29 @@
         <th></th>
       </tr>
       <tr>
-        <th><button>Instrucciones</button></th>
+        <th><button onclick="instru()">Instrucciones</button></th>
         <th></th>
-        <th><button>Creditos</button></th>
+        <th><button onclick="creditos()">Creditos</button></th>
       </tr>
       <tr>
         <th></th>
-        <th><button>Logros</button></th>
+        <th><button onclick="logros()">Logros</button></th>
         <th></th>
       </tr>
     </table>
 
-
+  </div>
+  <div id="instruccion">
+    <div id="phone">
+      <button id="home">INICIO</button>
+      <p style="color: white;">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+        industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+        scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into
+        electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of
+        Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus
+        PageMaker including versions of Lorem Ipsum.
+      </p>
+    </div>
   </div>
 </body>
 

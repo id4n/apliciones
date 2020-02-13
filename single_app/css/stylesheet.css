@@ -1,7 +1,7 @@
 body{
     background-color: #1565C0;
     margin:0;
-    
+    font-family: 'Odibee Sans', cursive;
 }
 /*splash*/
 #splash{
@@ -49,6 +49,7 @@ body{
    right: 0;
    margin:auto;
    border-radius: 10px;
+   transition: all 1s ease;
  }
  /*imagenes parciales*/
  #img{
@@ -76,8 +77,13 @@ body{
    text-align: center;
    transition-duration: 0.4s;
    font-family: 'Odibee Sans', cursive;
-   font-size: 20px;
+   font-size: 2 0px;
  }
  button:hover{
    color: #17202A;
+ }
+
+ /*div instrucciónes*/
+ #instruccion{
+   visibility: hidden;
  }
