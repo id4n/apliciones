@@ -5,12 +5,14 @@
 	<meta charset="UTF-8">
 	<title>Single App ejemplo</title>
 	<link rel="stylesheet" href="css/animate.css">
+	<link href="https://fonts.googleapis.com/css?family=Odibee+Sans&display=swap" rel="stylesheet">
 	<style type="text/css">
 		section {
 			width: 720px;
 			height: 1280px;
 			text-align: center;
 		}
+
 		/*css SPLASH*/
 		.splash {
 			background: LightSeaGreen;
@@ -51,7 +53,7 @@
 		}
 
 		.creditos {
-			background: DeepSkyBlue;
+			background: #F44336;
 		}
 
 		.instrucciones p {
@@ -59,20 +61,87 @@
 			text-align: left;
 		}
 
-		.boton {
-			background-color: Navy;
-			color: white;
-			padding: 10px;
-			text-decoration: none;
-		}
 
-		.volver {
-			margin-left: -300px;
-			line-height: 50px;
-		}
 
 		.oculto {
 			display: none;
+		}
+
+		/*fuentes*/
+		.fontOdibee {
+			font-family: 'Odibee Sans', cursive;
+		}
+
+		/*tamaño letras*/
+		.titulo {
+			font-size: 400%;
+		}
+
+		.medio {
+			font-size: 200%;
+		}
+
+		.small {
+			font-size: 120%;
+		}
+		/*tamaño imagenes*/
+		.imgFace{
+			width: 20%;
+			height: 20%;
+			padding: 5%;
+		}
+		.imgMenu{
+			width: 70%;
+			height: 40%;
+		}
+		/*botones*/
+		.btnMenu {
+			width: 200px;
+			height: 100px;
+			border-radius: 10px;
+			border: 0;
+			text-align: center;
+			transition-duration: 0.4s;
+		}
+
+		.btnMenu:hover {
+			background-color: #17202A;
+			box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+			color: white;
+		}
+
+		.boton {
+			background-color: #2196F3;
+			color: white;
+			padding: 3px 20px;
+			text-decoration: none;
+			border-radius: 10px;
+		}
+
+		.boton:hover {
+			background-color: #17202A;
+			box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+			e;
+		}
+
+		.volver {
+			line-height: 50px;
+			float: left;
+			margin-top: 3px;
+			margin-left: 3px;
+		}
+
+		/*posición*/
+		.centrar {
+			margin: auto;
+		}
+
+		.izq {
+			float: left
+		}
+
+		.der {
+			float: right
 		}
 	</style>
 	<script>
@@ -105,7 +174,7 @@
 	</script>
 </head>
 
-<body> 
+<body class="fontOdibee">
 	<!-- Splash -->
 	<section id="seccion_1" class="splash animated fadeIn">
 		<br>
@@ -115,30 +184,23 @@
 	<!-- Home -->
 	<section id="seccion_2" class="home oculto">
 		<br>
-		<h1>Nombre del juego</h1>
-		<img src="http://icons.iconarchive.com/icons/sonya/swarm/128/ivoted-2014-icon.png" alt="">
+		<h1 class="titulo">GUESS ME: movie edition</h1>
+		<br><br>
+		<img src="http://icons.iconarchive.com/icons/sonya/swarm/128/ivoted-2014-icon.png" alt="" class="imgMenu">
 		<br>
-		<br>
-		<table id="menu">
+		<br><br><br>
+		<table id="menu" class="centrar">
 			<tr>
-			  <th></th>
-			  <th><button onclick="cambiarSeccion(3)">Jugar</button></th>
-			  <th></th>
+				<th></th>
+				<th><button onclick="cambiarSeccion(3)" class="fontOdibee medio btnMenu">Jugar</button></th>
+				<th></th>
 			</tr>
 			<tr>
-			  <th><button onclick="cambiarSeccion(5)">Instrucciones</button></th>
-			  <th></th>
-			  <th><button onclick="cambiarSeccion(4)">Creditos</button></th>
+				<th><button onclick="cambiarSeccion(5)" class="fontOdibee medio btnMenu">Instrucciones</button></th>
+				<th></th>
+				<th><button onclick="cambiarSeccion(4)" class="fontOdibee medio btnMenu">Creditos</button></th>
 			</tr>
-			<tr>
-			  <th></th>
-			  <th><button onclick="cambiarSeccion(3)">Logros</button></th>
-			  <th></th>
-			</tr>
-		  </table>
-		<a href="javascript:void()" onclick="cambiarSeccion(3)">Juego</a><br><br>
-		<a href="javascript:void()" onclick="cambiarSeccion(5)">Instrucciones</a><br><br>
-		<a href="javascript:void()" onclick="cambiarSeccion(4)">Créditos</a><br>
+		</table>
 	</section>
 	<!-- Juego -->
 	<section id="seccion_3" class="juego oculto">
@@ -156,20 +218,47 @@
 	</section>
 	<!-- Créditos / Autores -->
 	<section id="seccion_4" class="creditos oculto">
-		<a href="javascript:void()" onclick="cambiarSeccion(2)" class="boton volver">&lt;</a>
+		<a href="javascript:void()" onclick="cambiarSeccion(2)" class="boton volver small">&lt;</a>
 		<br>
-		<br>
-		<h1>Créditos - Estudiantes</h1>
-		<br>
-		<img src="http://icons.iconarchive.com/icons/hopstarter/superhero-avatar/64/Avengers-Black-Widow-icon.png"
-			alt="">&nbsp;&nbsp;
-		<span>Nombre Estudiante / Diseñad@r</span> <br>
-		<img src="http://icons.iconarchive.com/icons/hopstarter/superhero-avatar/64/Avengers-Iron-Man-icon.png"
-			alt="">&nbsp;&nbsp;
-		<span>Nombre Estudiante / Ingeniero</span> <br>
-		<img src="http://icons.iconarchive.com/icons/hopstarter/superhero-avatar/64/Avengers-Thor-icon.png"
-			alt="">&nbsp;&nbsp;
-		<span>Nombre Estudiante / Ingeniero</span>
+		<br> 
+		<h1 class="titulo">Conoce a las personas detras</h1>
+		<br><br><br><br><br>
+		<div >
+			<img src="http://icons.iconarchive.com/icons/hopstarter/superhero-avatar/64/Avengers-Black-Widow-icon.png"
+				alt="" class="izq imgFace">&nbsp;&nbsp;
+			<span class="medio">Barrios Carleo Valeria Helena/ Diseñadora</span>
+			<p class="small">It is a long established fact that a reader will be distracted by the readable content of a page when
+				looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution
+				of letters, as opposed to using 'Content here, content here', making it look like readable English. Many
+				desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a
+				search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have
+				evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
+		</div>
+		<br><br><br><br>
+		<div>
+			<img src="http://icons.iconarchive.com/icons/hopstarter/superhero-avatar/64/Avengers-Iron-Man-icon.png"
+				alt="" class="der imgFace">&nbsp;&nbsp;
+			<span class="medio">Uribe Betancur Luis Fernando / Ingeniero</span>
+			<p class="small">It is a long established fact that a reader will be distracted by the readable content of a page when
+				looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution
+				of letters, as opposed to using 'Content here, content here', making it look like readable English. Many
+				desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a
+				search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have
+				evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
+		</div>
+		<br><br><br><br>
+		<div>
+			<img src="http://icons.iconarchive.com/icons/hopstarter/superhero-avatar/64/Avengers-Thor-icon.png" alt=""
+				class="izq imgFace">&nbsp;&nbsp;
+			<span class="medio">Juan David Sánchez Hoyos / Ingeniero</span>
+			<p class="small">It is a long established fact that a reader will be distracted by the readable content of a page when
+				looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution
+				of letters, as opposed to using 'Content here, content here', making it look like readable English. Many
+				desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a
+				search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have
+				evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
+		</div>
+
 	</section>
 	<!-- Instrucciones -->
 	<section id="seccion_5" class="instrucciones oculto">
