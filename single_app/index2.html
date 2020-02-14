@@ -1,82 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<title>Single App ejemplo</title>
+	<link rel="stylesheet" href="css/animate.css">
 	<style type="text/css">
-		section{
-			width:340px;
-			height:440px;
+		section {
+			width: 720px;
+			height: 1280px;
 			text-align: center;
 		}
-		.splash{
+		/*css SPLASH*/
+		.splash {
 			background: LightSeaGreen;
 		}
-		.home{
+
+		#carga {
+			border: 15px solid #17202A;
+			border-top-color: #F44336;
+			border-top-style: groove;
+			height: 70px;
+			width: 70px;
+			border-radius: 100%;
+			margin: auto;
+			margin-top: 50%;
+			animation: girar 1.5s linear infinite;
+		}
+
+		@keyframes girar {
+			from {
+				transform: rotate(0deg);
+			}
+
+			to {
+				transform: rotate(360deg);
+			}
+		}
+
+		.home {
 			background: OrangeRed;
 		}
-		.juego{
+
+		.juego {
 			background: Violet;
 		}
-		.instrucciones{
+
+		.instrucciones {
 			background: YellowGreen;
 		}
-		.creditos{
+
+		.creditos {
 			background: DeepSkyBlue;
-		}	
-		.instrucciones p{
-			margin:25px;
+		}
+
+		.instrucciones p {
+			margin: 25px;
 			text-align: left;
-		}	
-		.boton{
+		}
+
+		.boton {
 			background-color: Navy;
-			color:white;
+			color: white;
 			padding: 10px;
 			text-decoration: none;
 		}
-		.volver{
+
+		.volver {
 			margin-left: -300px;
 			line-height: 50px;
 		}
-		.oculto{
+
+		.oculto {
 			display: none;
 		}
 	</style>
 	<script>
-	var secciones = [];
-	var tiempo_splash = 2000;
+		var secciones = [];
+		var tiempo_splash = 2000;
 
-	window.onload = function(){
-		inicializarReferencias();
-		setTimeout(cambiarSplash,tiempo_splash);
-	}
+		window.onload = function () {
+			inicializarReferencias();
+			setTimeout(cambiarSplash, tiempo_splash);
+		}
 
-	function inicializarReferencias(){
-		secciones[1] = document.getElementById("seccion_1");
-		secciones[2] = document.getElementById("seccion_2");
-		secciones[3] = document.getElementById("seccion_3");
-		secciones[4] = document.getElementById("seccion_4");
-		secciones[5] = document.getElementById("seccion_5");
-	}
+		function inicializarReferencias() {
+			secciones[1] = document.getElementById("seccion_1");
+			secciones[2] = document.getElementById("seccion_2");
+			secciones[3] = document.getElementById("seccion_3");
+			secciones[4] = document.getElementById("seccion_4");
+			secciones[5] = document.getElementById("seccion_5");
+		}
 
-	function cambiarSplash(){
-		secciones[1].className = "splash oculto";
-		secciones[2].className = "home";
-    }
-    function cambiarSeccion(id_seccion){
-        for(var i in secciones){
-            secciones[i].classList.add("oculto");
-        }
-        secciones[id_seccion].classList.remove("oculto");
-    }
+		function cambiarSplash() {
+			secciones[1].className = "splash oculto";
+			secciones[2].className = "home";
+		}
+		function cambiarSeccion(id_seccion) {
+			for (var i in secciones) {
+				secciones[i].classList.add("oculto");
+			}
+			secciones[id_seccion].classList.remove("oculto");
+		}
 	</script>
 </head>
-<body>
+
+<body> 
 	<!-- Splash -->
-	<section id="seccion_1" class="splash">
+	<section id="seccion_1" class="splash animated fadeIn">
 		<br>
 		<h1>Splash del juego</h1>
-		<img src="http://icons.iconarchive.com/icons/sonya/swarm/128/ivoted-2014-icon.png" alt="">
+		<div id="carga"></div>
 	</section>
 	<!-- Home -->
 	<section id="seccion_2" class="home oculto">
@@ -85,6 +119,23 @@
 		<img src="http://icons.iconarchive.com/icons/sonya/swarm/128/ivoted-2014-icon.png" alt="">
 		<br>
 		<br>
+		<table id="menu">
+			<tr>
+			  <th></th>
+			  <th><button onclick="cambiarSeccion(3)">Jugar</button></th>
+			  <th></th>
+			</tr>
+			<tr>
+			  <th><button onclick="cambiarSeccion(5)">Instrucciones</button></th>
+			  <th></th>
+			  <th><button onclick="cambiarSeccion(4)">Creditos</button></th>
+			</tr>
+			<tr>
+			  <th></th>
+			  <th><button onclick="cambiarSeccion(3)">Logros</button></th>
+			  <th></th>
+			</tr>
+		  </table>
 		<a href="javascript:void()" onclick="cambiarSeccion(3)">Juego</a><br><br>
 		<a href="javascript:void()" onclick="cambiarSeccion(5)">Instrucciones</a><br><br>
 		<a href="javascript:void()" onclick="cambiarSeccion(4)">Créditos</a><br>
@@ -110,11 +161,14 @@
 		<br>
 		<h1>Créditos - Estudiantes</h1>
 		<br>
-		<img src="http://icons.iconarchive.com/icons/hopstarter/superhero-avatar/64/Avengers-Black-Widow-icon.png" alt="">&nbsp;&nbsp;
+		<img src="http://icons.iconarchive.com/icons/hopstarter/superhero-avatar/64/Avengers-Black-Widow-icon.png"
+			alt="">&nbsp;&nbsp;
 		<span>Nombre Estudiante / Diseñad@r</span> <br>
-		<img src="http://icons.iconarchive.com/icons/hopstarter/superhero-avatar/64/Avengers-Iron-Man-icon.png" alt="">&nbsp;&nbsp;
+		<img src="http://icons.iconarchive.com/icons/hopstarter/superhero-avatar/64/Avengers-Iron-Man-icon.png"
+			alt="">&nbsp;&nbsp;
 		<span>Nombre Estudiante / Ingeniero</span> <br>
-		<img src="http://icons.iconarchive.com/icons/hopstarter/superhero-avatar/64/Avengers-Thor-icon.png" alt="">&nbsp;&nbsp;
+		<img src="http://icons.iconarchive.com/icons/hopstarter/superhero-avatar/64/Avengers-Thor-icon.png"
+			alt="">&nbsp;&nbsp;
 		<span>Nombre Estudiante / Ingeniero</span>
 	</section>
 	<!-- Instrucciones -->
@@ -122,11 +176,16 @@
 		<a href="javascript:void()" onclick="cambiarSeccion(2)" class="boton volver">&lt;</a>
 		<h1>Instrucciones</h1>
 		<p>
-			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti, explicabo ducimus voluptates suscipit consequatur eligendi eos, hic aperiam sit! Recusandae explicabo provident sapiente beatae nam soluta ab minima omnis sed! <br>
-			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias repellendus aliquam odit, iusto earum ipsum. Repudiandae deleniti corporis, praesentium accusantium aspernatur temporibus quisquam minus, soluta provident molestiae. Tempore, aliquid, fugit. <br>
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti, explicabo ducimus voluptates suscipit
+			consequatur eligendi eos, hic aperiam sit! Recusandae explicabo provident sapiente beatae nam soluta ab
+			minima omnis sed! <br>
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias repellendus aliquam odit, iusto earum
+			ipsum. Repudiandae deleniti corporis, praesentium accusantium aspernatur temporibus quisquam minus, soluta
+			provident molestiae. Tempore, aliquid, fugit. <br>
 
 		</p>
 		<a href="#" class="boton">&lt;</a>&nbsp;&nbsp;<a href="" class="boton">&gt;</a>
 	</section>
 </body>
+
 </html>
