@@ -39,7 +39,7 @@
 				transform: rotate(360deg);
 			}
 		}
-
+		/*SECCIONES*/
 		.home {
 			background: OrangeRed;
 		}
@@ -60,9 +60,9 @@
 			margin: 25px;
 			text-align: left;
 		}
-
-
-
+		.resultado{
+			background: #138D75;
+		}
 		.oculto {
 			display: none;
 		}
@@ -97,6 +97,10 @@
 			height: 40%;
 		}
 
+		.imgResult{
+			width: 50%;
+			height: 30%;
+		}
 		/*botones*/
 		.btnMenu {
 			width: 200px;
@@ -116,7 +120,7 @@
 		.boton {
 			background-color: #2196F3;
 			color: white;
-			padding: 3px 20px;
+			padding: 5px 20px;
 			text-decoration: none;
 			border-radius: 10px;
 		}
@@ -128,8 +132,21 @@
 
 		.volver {
 			float: left;
-			margin-top: 3px;
-			margin-left: 3px;
+			margin-top: 10px;
+			margin-left: 10px;
+		}
+
+		.btnOpciones {
+			padding: 5% 20%;
+			border-radius: 10px;
+			border: 0;
+			text-align: center;
+			margin-top: 10%;
+			transition-duration: 0.4s;
+		}
+
+		.btnOpciones:hover {
+			box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.8);
 		}
 
 		/*posición*/
@@ -143,6 +160,9 @@
 
 		.der {
 			float: right
+		}
+		.enLinea{
+			display:inline;
 		}
 	</style>
 	<script>
@@ -160,6 +180,7 @@
 			secciones[3] = document.getElementById("seccion_3");
 			secciones[4] = document.getElementById("seccion_4");
 			secciones[5] = document.getElementById("seccion_5");
+			secciones[6] = document.getElementById("seccion_6");
 		}
 
 		function cambiarSplash() {
@@ -171,6 +192,31 @@
 				secciones[i].classList.add("oculto");
 			}
 			secciones[id_seccion].classList.remove("oculto");
+		}
+		function volverQuestion(id_seccion) {
+			var opcion = window.confirm("¿Está seguro que desea salir?\nSu progreso se guardará hasta aquí")
+			if (opcion) {
+				for (var i in secciones) {
+					secciones[i].classList.add("oculto");
+				}
+				secciones[id_seccion].classList.remove("oculto");
+			}
+
+		}
+		var elemento; //boton de opcion buena
+		function buena(){
+			elemento = document.getElementById('good');
+			elemento.style.background='#2ECC71';
+			var tiempo=1000;
+			setTimeout(cambiarResult, tiempo);//hacer funcion cuando se acabe el 'tiempo'
+			
+		}
+		function cambiarResult(){
+			for (var i in secciones) {
+					secciones[i].classList.add("oculto");
+				}
+				secciones[6].classList.remove("oculto");
+				elemento.style.background='white';//volver a poner el boton del color blanco
 		}
 	</script>
 </head>
@@ -205,17 +251,18 @@
 	</section>
 	<!-- Juego -->
 	<section id="seccion_3" class="juego oculto">
-		<a href="javascript:void()" onclick="cambiarSeccion(2)" class="boton volver">&lt;</a>
-		<br>
-		<h1>Juego</h1>
-		<br>
-		<img src="http://icons.iconarchive.com/icons/sonya/swarm/128/Mona-Lisa-icon.png" alt="">
+		<a href="javascript:void()" onclick="volverQuestion(2)" class="boton volver small">&lt;</a>
 		<br>
 		<br>
-		<a href="#">Miguel Angel</a>&nbsp;&nbsp;
-		<a href="#">Fernando Botero</a><br><br>
-		<a href="#">Alberto Durero</a>&nbsp;&nbsp;
-		<a href="#">Leonardo da Vinci</a><br><br>
+		<h1 class="medio">[genero de la pelicula]</h1>
+		<br>
+		<br>
+		<img src="http://icons.iconarchive.com/icons/sonya/swarm/128/Mona-Lisa-icon.png" alt="" class="imgMenu">
+		<br>
+		<br>
+		<button class="btnOpciones centro medio fontOdibee" onclick="buena()" id="good">Opcion 1</button><br>
+		<button class="btnOpciones centro medio fontOdibee">Opcion 2</button><br>
+		<button class="btnOpciones centro medio fontOdibee">Opcion 3</button><br>
 	</section>
 	<!-- Créditos / Autores -->
 	<section id="seccion_4" class="creditos oculto">
@@ -284,6 +331,29 @@
 			search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have
 			evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
 		</p>
+	</section>
+	<!-- Resultados -->
+	<section id="seccion_6" class="resultado oculto">
+		<a href="javascript:void()" onclick="cambiarSeccion(2)" class="boton volver small">&lt;</a>
+		<br>
+		<br>
+		<h1 class="titulo suma">#</h1>
+		<h1 class="medio">Tus aciertos fueron:</h1>
+		<br>
+		<br>
+		<img src="http://icons.iconarchive.com/icons/sonya/swarm/128/Mona-Lisa-icon.png" alt="" class="imgResult der">
+		<br>
+		<br>
+		<!-- id result_1 es para hacer el calculo y cambiar el valor #-->
+		<p class="medio fontOdibee" id="result_1">Genero 1: #</p>
+		<p class="medio fontOdibee" id="result_2">Genero 2: #</p>
+		<p class="medio fontOdibee" id="result_3">Genero 3: #</p>
+		<p class="medio fontOdibee" id="result_4">Genero 4: #</p>
+		<p class="medio fontOdibee" id="result_5">Genero 5: #</p>
+	<br>
+	<br>
+	<p class="titulo fontOdibee">¡FELICIDADES!</p>
+	<P class="medio fontOdibee">Que la fuerza este contigo</P>
 	</section>
 </body>
 
