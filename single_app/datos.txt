@@ -1,1 +1,18 @@
 Cómo crear un Indicador de Carga Web (Page Loader Spinner) con Animaciones CSS3 y JavaScript
+hola mundo
+    apliciones moviles
+        scripting
+            new topic
+
+                nombre del juego
+                integrantes
+                preguntas
+                    ¿que han hecho?
+                    ¿que van a hacer?
+                    ¿qué dificultades tienen?
+                wireframe
+                repositorio proyecto
+                user1
+                 repositorio
+                user2
+                 repositorio
