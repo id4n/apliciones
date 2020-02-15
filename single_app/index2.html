@@ -5,11 +5,15 @@
 	<meta charset="UTF-8">
 	<title>Single App ejemplo</title>
 	<link rel="stylesheet" href="css/animate.css">
-	<link href="https://fonts.googleapis.com/css?family=Odibee+Sans&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Odibee+Sans|Tomorrow&display=swap" rel="stylesheet">
 	<style type="text/css">
+		body {
+			margin: 0;
+		}
+
 		section {
-			width: 720px;
-			height: 1280px;
+			width: 1000px;
+			height: 1740px;
 			text-align: center;
 		}
 
@@ -22,11 +26,11 @@
 			border: 15px solid #17202A;
 			border-top-color: #F44336;
 			border-top-style: groove;
-			height: 70px;
-			width: 70px;
+			height: 200px;
+			width: 200px;
 			border-radius: 100%;
 			margin: auto;
-			margin-top: 50%;
+			margin-top: 55%;
 			animation: girar 1.5s linear infinite;
 		}
 
@@ -39,6 +43,7 @@
 				transform: rotate(360deg);
 			}
 		}
+
 		/*SECCIONES*/
 		.home {
 			background: OrangeRed;
@@ -56,13 +61,10 @@
 			background: #F44336;
 		}
 
-		.instrucciones p {
-			margin: 25px;
-			text-align: left;
-		}
-		.resultado{
+		.resultado {
 			background: #138D75;
 		}
+
 		.oculto {
 			display: none;
 		}
@@ -72,17 +74,30 @@
 			font-family: 'Odibee Sans', cursive;
 		}
 
+		.justificar {
+			text-align: justify;
+			margin-left: 20px;
+			margin-right: 20px;
+		}
+		.nombres{
+			color: white;
+			font-family: 'Tomorrow', sans-serif;
+		}
 		/*tamaño letras*/
 		.titulo {
-			font-size: 400%;
+			font-size: 700%;
 		}
 
 		.medio {
-			font-size: 200%;
+			font-size: 400%;
 		}
 
 		.small {
-			font-size: 120%;
+			font-size: 300%;
+		}
+
+		.small2 {
+			font-size: 200%;
 		}
 
 		/*tamaño imagenes*/
@@ -97,13 +112,14 @@
 			height: 40%;
 		}
 
-		.imgResult{
+		.imgResult {
 			width: 50%;
 			height: 30%;
 		}
+
 		/*botones*/
 		.btnMenu {
-			width: 200px;
+			width: 300px;
 			height: 100px;
 			border-radius: 10px;
 			border: 0;
@@ -120,9 +136,10 @@
 		.boton {
 			background-color: #2196F3;
 			color: white;
-			padding: 5px 20px;
+			padding: 20px 40px;
 			text-decoration: none;
 			border-radius: 10px;
+			text-align: center;
 		}
 
 		.boton:hover {
@@ -132,17 +149,19 @@
 
 		.volver {
 			float: left;
-			margin-top: 10px;
-			margin-left: 10px;
+			margin-top: 20px;
+			margin-left: 20px;
 		}
 
 		.btnOpciones {
-			padding: 5% 20%;
+			width: 300px;
+			height: 100px;
 			border-radius: 10px;
 			border: 0;
 			text-align: center;
 			margin-top: 10%;
 			transition-duration: 0.4s;
+			background: white;
 		}
 
 		.btnOpciones:hover {
@@ -161,8 +180,9 @@
 		.der {
 			float: right
 		}
-		.enLinea{
-			display:inline;
+
+		.enLinea {
+			display: inline;
 		}
 	</style>
 	<script>
@@ -204,19 +224,19 @@
 
 		}
 		var elemento; //boton de opcion buena
-		function buena(){
+		function buena() {
 			elemento = document.getElementById('good');
-			elemento.style.background='#2ECC71';
-			var tiempo=1000;
+			elemento.style.background = '#2ECC71';
+			var tiempo = 1000;
 			setTimeout(cambiarResult, tiempo);//hacer funcion cuando se acabe el 'tiempo'
-			
+
 		}
-		function cambiarResult(){
+		function cambiarResult() {
 			for (var i in secciones) {
-					secciones[i].classList.add("oculto");
-				}
-				secciones[6].classList.remove("oculto");
-				elemento.style.background='white';//volver a poner el boton del color blanco
+				secciones[i].classList.add("oculto");
+			}
+			secciones[6].classList.remove("oculto");
+			elemento.style.background = 'white';//volver a poner el boton del color blanco
 		}
 	</script>
 </head>
@@ -225,7 +245,7 @@
 	<!-- Splash -->
 	<section id="seccion_1" class="splash animated fadeIn">
 		<br>
-		<h1>Splash del juego</h1>
+		<h1 class="titulo">Splash del juego</h1>
 		<div id="carga"></div>
 	</section>
 	<!-- Home -->
@@ -253,8 +273,8 @@
 	<section id="seccion_3" class="juego oculto">
 		<a href="javascript:void()" onclick="volverQuestion(2)" class="boton volver small">&lt;</a>
 		<br>
-		<br>
-		<h1 class="medio">[genero de la pelicula]</h1>
+		<br><br><br>
+		<h1 class="medio centro" style="position: relative;">[genero de la pelicula]</h1>
 		<br>
 		<br>
 		<img src="http://icons.iconarchive.com/icons/sonya/swarm/128/Mona-Lisa-icon.png" alt="" class="imgMenu">
@@ -270,44 +290,41 @@
 		<br>
 		<br>
 		<h1 class="titulo">Conoce a las personas detras</h1>
-		<br><br><br><br><br>
 		<div>
 			<img src="http://icons.iconarchive.com/icons/hopstarter/superhero-avatar/64/Avengers-Black-Widow-icon.png"
 				alt="" class="izq imgFace">&nbsp;&nbsp;
-			<span class="medio">Barrios Carleo Valeria Helena/ Diseñadora</span>
-			<p class="small">It is a long established fact that a reader will be distracted by the readable content of a
+			<span class="small nombres">Barrios Carleo Valeria Helena/ Diseñadora</span>
+			<p class="small2 justificar">It is a long established fact that a reader will be distracted by the readable
+				content of a
 				page when
 				looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution
 				of letters, as opposed to using 'Content here, content here', making it look like readable English. Many
 				desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a
-				search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have
-				evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
+				search for 'lorem ipsum' will uncover many web sites still in their infancy.</p>
 		</div>
-		<br><br><br><br>
 		<div>
 			<img src="http://icons.iconarchive.com/icons/hopstarter/superhero-avatar/64/Avengers-Iron-Man-icon.png"
 				alt="" class="der imgFace">&nbsp;&nbsp;
-			<span class="medio">Uribe Betancur Luis Fernando / Ingeniero</span>
-			<p class="small">It is a long established fact that a reader will be distracted by the readable content of a
+			<span class="small nombres">Uribe Betancur Luis Fernando / Ingeniero</span>
+			<p class="small2 justificar">It is a long established fact that a reader will be distracted by the readable
+				content of a
 				page when
 				looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution
 				of letters, as opposed to using 'Content here, content here', making it look like readable English. Many
 				desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a
-				search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have
-				evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
+				search for 'lorem ipsum' will uncover many web sites still in their infancy.</p>
 		</div>
-		<br><br><br><br>
 		<div>
 			<img src="http://icons.iconarchive.com/icons/hopstarter/superhero-avatar/64/Avengers-Thor-icon.png" alt=""
 				class="izq imgFace">&nbsp;&nbsp;
-			<span class="medio">Juan David Sánchez Hoyos / Ingeniero</span>
-			<p class="small">It is a long established fact that a reader will be distracted by the readable content of a
+			<span class="small nombres">Juan David Sánchez Hoyos / Ingeniero</span>
+			<p class="small2 justificar">It is a long established fact that a reader will be distracted by the readable
+				content of a
 				page when
 				looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution
 				of letters, as opposed to using 'Content here, content here', making it look like readable English. Many
 				desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a
-				search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have
-				evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
+				search for 'lorem ipsum' will uncover many web sites still in their infancy.</p>
 		</div>
 
 	</section>
@@ -317,7 +334,7 @@
 		<br>
 		<br>
 		<h1 class="titulo">¿Cómo jugar?</h1>
-		<p class="medio">
+		<p class="small justificar">
 			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti, explicabo ducimus voluptates suscipit
 			consequatur eligendi eos, hic aperiam sit! Recusandae explicabo provident sapiente beatae nam soluta ab
 			minima omnis sed! <br>
@@ -343,17 +360,14 @@
 		<br>
 		<img src="http://icons.iconarchive.com/icons/sonya/swarm/128/Mona-Lisa-icon.png" alt="" class="imgResult der">
 		<br>
-		<br>
 		<!-- id result_1 es para hacer el calculo y cambiar el valor #-->
-		<p class="medio fontOdibee" id="result_1">Genero 1: #</p>
-		<p class="medio fontOdibee" id="result_2">Genero 2: #</p>
-		<p class="medio fontOdibee" id="result_3">Genero 3: #</p>
-		<p class="medio fontOdibee" id="result_4">Genero 4: #</p>
-		<p class="medio fontOdibee" id="result_5">Genero 5: #</p>
-	<br>
-	<br>
-	<p class="titulo fontOdibee">¡FELICIDADES!</p>
-	<P class="medio fontOdibee">Que la fuerza este contigo</P>
+		<p class="small fontOdibee" id="result_1">Genero 1: #</p>
+		<p class="small fontOdibee" id="result_2">Genero 2: #</p>
+		<p class="small fontOdibee" id="result_3">Genero 3: #</p>
+		<p class="small fontOdibee" id="result_4">Genero 4: #</p>
+		<p class="small fontOdibee" id="result_5">Genero 5: #</p>
+		<p class="titulo fontOdibee">¡FELICIDADES!</p>
+		<P class="medio fontOdibee">Que la fuerza este contigo</P>
 	</section>
 </body>
 
