@@ -108,8 +108,17 @@
 		}
 
 		.imgMenu {
-			width: 70%;
-			height: 40%;
+			width: 60%;
+			height: 30%;
+		}
+
+		.imgMenu2{
+			background: #212F3D;
+			border-radius: 10px;
+			width: 40%;
+			height: 20%;
+			margin-left: 30px;
+			color:white;
 		}
 
 		.imgResult {
@@ -125,6 +134,7 @@
 			border: 0;
 			text-align: center;
 			transition-duration: 0.4s;
+			margin-bottom: 20px;
 		}
 
 		.btnMenu:hover {
@@ -183,6 +193,12 @@
 
 		.enLinea {
 			display: inline;
+		}
+		#btnJugar{
+			margin-left: -400px;
+		}
+		#btnCred{
+			margin-left: 400px;
 		}
 	</style>
 	<script>
@@ -248,6 +264,7 @@
 		<h1 class="titulo">Splash del juego</h1>
 		<div id="carga"></div>
 	</section>
+
 	<!-- Home -->
 	<section id="seccion_2" class="home oculto">
 		<br>
@@ -256,34 +273,28 @@
 		<img src="http://icons.iconarchive.com/icons/sonya/swarm/128/ivoted-2014-icon.png" alt="" class="imgMenu">
 		<br>
 		<br><br><br>
-		<table id="menu" class="centrar">
-			<tr>
-				<th></th>
-				<th><button onclick="cambiarSeccion(3)" class="fontOdibee medio btnMenu">Jugar</button></th>
-				<th></th>
-			</tr>
-			<tr>
-				<th><button onclick="cambiarSeccion(5)" class="fontOdibee medio btnMenu">Instrucciones</button></th>
-				<th></th>
-				<th><button onclick="cambiarSeccion(4)" class="fontOdibee medio btnMenu">Creditos</button></th>
-			</tr>
-		</table>
+		<button onclick="cambiarSeccion(3)" class="fontOdibee medio btnMenu" id="btnJugar">Jugar</button><br>
+		<button onclick="cambiarSeccion(5)" class="fontOdibee medio btnMenu" >Instrucciones</button><br>
+		<button onclick="cambiarSeccion(4)" class="fontOdibee medio btnMenu" id="btnCred">Creditos</button><br>
+		<div class="fontOdibee small imgMenu2">IMG</div>
 	</section>
+
 	<!-- Juego -->
 	<section id="seccion_3" class="juego oculto">
 		<a href="javascript:void()" onclick="volverQuestion(2)" class="boton volver small">&lt;</a>
 		<br>
-		<br><br><br>
-		<h1 class="medio centro" style="position: relative;">[genero de la pelicula]</h1>
+		<br><br><br><br><br>
+		<h1 class="medio centrar">[genero de la pelicula]</h1>
 		<br>
 		<br>
 		<img src="http://icons.iconarchive.com/icons/sonya/swarm/128/Mona-Lisa-icon.png" alt="" class="imgMenu">
 		<br>
 		<br>
-		<button class="btnOpciones centro medio fontOdibee" onclick="buena()" id="good">Opcion 1</button><br>
-		<button class="btnOpciones centro medio fontOdibee">Opcion 2</button><br>
-		<button class="btnOpciones centro medio fontOdibee">Opcion 3</button><br>
+		<button class="btnOpciones medio fontOdibee" onclick="buena()" id="good">Opcion 1</button><br>
+		<button class="btnOpciones medio fontOdibee">Opcion 2</button><br>
+		<button class="btnOpciones medio fontOdibee">Opcion 3</button><br>
 	</section>
+
 	<!-- Créditos / Autores -->
 	<section id="seccion_4" class="creditos oculto">
 		<a href="javascript:void()" onclick="cambiarSeccion(2)" class="boton volver small">&lt;</a>
@@ -328,6 +339,7 @@
 		</div>
 
 	</section>
+
 	<!-- Instrucciones -->
 	<section id="seccion_5" class="instrucciones oculto">
 		<a href="javascript:void()" onclick="cambiarSeccion(2)" class="boton volver small">&lt;</a>
@@ -349,6 +361,7 @@
 			evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
 		</p>
 	</section>
+
 	<!-- Resultados -->
 	<section id="seccion_6" class="resultado oculto">
 		<a href="javascript:void()" onclick="cambiarSeccion(2)" class="boton volver small">&lt;</a>
